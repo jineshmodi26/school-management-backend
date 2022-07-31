@@ -151,7 +151,7 @@ module.exports = {
                         Fees_Per_Student: cls.Fees_Per_Student,
                         Subjects: subjects,
                     });
-                    if (index === (classes.length - 1)) {
+                    if ((detailClass.length) === (classes.length )) {
                         res.status(200).json({
                             error: false,
                             data: detailClass,
@@ -170,7 +170,7 @@ module.exports = {
                                 Fees_Per_Student: cls.Fees_Per_Student,
                                 Subjects: subjects,
                             });
-                            if (index === (classes.length - 1)) {
+                            if ((detailClass.length) === (classes.length )) {
                                 res.status(200).json({
                                     error: false,
                                     data: detailClass,

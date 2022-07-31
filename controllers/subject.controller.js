@@ -16,7 +16,7 @@ module.exports = {
             let errMsg = getError(error)
             return res.status(400).json({
                 error: true,
-                message:  errMsg.length > 0 ? errMsg : "Could not create class."
+                message:  errMsg.length > 0 ? errMsg : "Could not get Subjects."
             })
         }
     },
@@ -31,7 +31,7 @@ module.exports = {
             let errMsg = getError(error)
             return res.status(400).json({
                 error: true,
-                message:  errMsg.length > 0 ? errMsg : "Could not create class."
+                message:  errMsg.length > 0 ? errMsg : "Could not get Subjects."
             })
         }
     },
@@ -47,7 +47,7 @@ module.exports = {
             let errMsg = getError(error)
             return res.status(400).json({
                 error: true,
-                message:  errMsg.length > 0 ? errMsg : "Could not create class."
+                message:  errMsg.length > 0 ? errMsg : "Could not get Subject."
             })
         }
     },
@@ -62,7 +62,7 @@ module.exports = {
             let errMsg = getError(error)
             return res.status(400).json({
                 error: true,
-                message: errMsg.length > 0 ? errMsg : "Could not create class."
+                message: errMsg.length > 0 ? errMsg : "Could not get subjects."
             })
         }
     },
@@ -77,7 +77,7 @@ module.exports = {
             let errMsg = getError(error)
             return res.status(400).json({
                 error: true,
-                message: errMsg.length > 0 ? errMsg : "Could not create class."
+                message: errMsg.length > 0 ? errMsg : "Could not get subjects."
             })
         }
     },
@@ -102,7 +102,7 @@ module.exports = {
             let errMsg = getError(error)
             return res.status(400).json({
                 error: true,
-                message:  errMsg.length > 0 ? errMsg : "Could not create class."
+                message:  errMsg.length > 0 ? errMsg : "Could not get subjects."
             })
         }
     },
@@ -142,14 +142,14 @@ module.exports = {
             });
             return res.status(201).json({
                 error : false,
-                message : "Class updated successfully",
+                message : "Subject updated successfully",
                 data : updatedClass
             });
         } catch (error) {
             let errMsg = getError(error)
             return res.status(400).json({
                 error: true,
-                message:  errMsg.length > 0 ? errMsg : "Could not create class."
+                message:  errMsg.length > 0 ? errMsg : "Could not create Subject."
             })
         }
     },
@@ -159,14 +159,14 @@ module.exports = {
             const updatedClass = await Subject.findOneAndDelete({_id:id,Admin_Id:req.admin._id})
             return res.status(201).json({
                 error : false,
-                message : "Class deleted successfully",
+                message : "Subject deleted successfully",
                 data : updatedClass
             });
         } catch (error) {
             let errMsg = getError(error)
             return res.status(400).json({
                 error: true,
-                message:  errMsg.length > 0 ? errMsg : "Could not delete class."
+                message:  errMsg.length > 0 ? errMsg : "Could not delete Subject."
             })
         }
     }

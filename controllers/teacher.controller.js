@@ -11,7 +11,7 @@ async function generateUniqueUserName(proposedName) {
                 proposedName += Math.floor((Math.random() * 100) + 1);
                 return generateUniqueUserName(proposedName); // <== return statement here
             }
-            return proposedName.toLowerCase();
+            return proposedName;
         })
         .catch(function (err) {
             console.error(err);
@@ -25,7 +25,7 @@ module.exports = {
         try {
 
             const {teacherName,Salary,Subjects_Id,password} = req.body;
-                const userName = await generateUniqueUserName(teacherName);
+                const userName = await generateUniqueUserName(teacherName.toLowerCase().replace(/ /g,''));
 
                 const teacher = Teacher({
                     studentID : userName,
@@ -138,7 +138,7 @@ module.exports = {
     },
     loginTeacher : async(req,res)=>{
         try {
-            let username = (req.body.UserName).toLowerCase();
+            let username = (req.body.UserName).toLowerCase().replace(/ /g,'');
             const teacher = await Teacher.findByCredentials(username, req.body.password)
             if (teacher) {
                 const token = await teacher.generateAuthToken()

@@ -20,6 +20,13 @@ const examRouter = require('./routes/exam.router');
 const materialRouter = require('./routes/material.router');
 const resultRouter = require('./routes/result.router')
 const assignmentRouter = require('./routes/assignment.router');
+//var fs = require('fs');
+//var http = require('http');
+//var https = require('https');
+//var privateKey  = fs.readFileSync('./sslfiles/key.pem', 'utf8');
+//var certificate = fs.readFileSync('./sslfiles/cert.pem', 'utf8');
+//var credentials = {key: privateKey, cert: certificate};
+//var httpsServer = https.createServer(credentials, app);
 
 mongoose.connect(MONGO_URL);
 
@@ -41,7 +48,8 @@ app.use("/api/v1/materials", materialRouter);
 app.use("/api/v1/results",resultRouter);
 app.use("/api/v1/assignments", assignmentRouter);
 app.use("/api/v1/superAdmin",superadminRouter);
-
+//var httpsServer = https.createServer(credentials, app);
+//httpsServer.listen(3003);
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`);
 });
